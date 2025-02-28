@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-20px);
+    animation: slideIn 1s forwards;
+    border:2px solid #fae2b1;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+a {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #fcd27d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+a:hover {
+    background: #ffe7b7;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+    }
+}
+
+p,h1 {
+color: #fcc75d;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #ff9f68;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #ffb48c;
+    transform: scale(1.05);
+}
+
+/* 📌 1. 桌機版（電腦版，寬度超過 768px） */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px; /* 限制內容寬度 */
+    margin: auto;
+}
+
+/* 📌 2. 平板 & 手機版（小於 768px） */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* 縮小邊距 */
+    }
+
+    .profile {
+        max-width: 90%; /* 讓內容佔滿手機寬度 */
+    }
+
+    img {
+        width: 120px; /* 手機上圖片變小 */
+        height: 120px;
+    }
+
+    p {
+        font-size: 14px; /* 手機上字體小一點 */
+    }
+}
+
+/* 📌 3. 超小螢幕（小於 500px） */
+@media (max-width: 500px) {
+    h1 {
+        font-size: 20px; /* 標題變小 */
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    a, button {
+        width: 100%; /* 讓按鈕變整排 */
+        display: block;
+        margin: 10px 0;
+    }
+}

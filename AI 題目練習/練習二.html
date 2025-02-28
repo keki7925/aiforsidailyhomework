@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人簡介</title>
+    <link rel="stylesheet" href="練習二.css">
+</head>
+<body>
+    <div class="profile">
+       <img src="si.jpg" src="hkw.jpg" alt="個人大頭貼" onclick="changeImage()">
+        <h1>Si</h1>
+        <p>I'm 35 years old, married, and a mom to a 4-year-old boy. I work in an office and spend most of my day on the computer. But I'm really passionate about becoming a front-end engineer, so right now, I’m learning HTML, CSS, and JavaScript.</p>
+        <a href="mailto:keki7925@gmail.com">聯絡我</a>
+        <button onclick="changeBgColor()">改變背景顏色</button>
+    </div>
+    
+    <script>
+        function changeBgColor() {
+          let img = document.querySelector(".profile img");
+
+    // 替換不同的圖片
+    if (img.src.includes("si.jpg")) {
+        img.src = "hkw.jpg"; // 替換成你的第二張圖片
+    } else {
+        img.src = "si.jpg"; // 換回原本的圖片
+    }
+
+    let body = document.body;
+    
+    // 產生較亮的顏色（HSL 模式）
+    let hue = Math.floor(Math.random() * 360);  // 隨機色相 (0-360)
+    let lightness = Math.floor(Math.random() * 40) + 60; // 保持亮色系 (60-100)
+
+    let randomColor = `hsl(${hue}, 80%, ${lightness}%)`;
+    
+    body.style.backgroundColor = randomColor;
+}
+
+    </script>
+    
+</body>
+</html>
